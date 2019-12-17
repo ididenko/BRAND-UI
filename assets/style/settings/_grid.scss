@@ -1,0 +1,90 @@
+.page-grid {
+  @extend %spaceBetween;
+  position: relative;
+
+  @media #{$desktop} {
+    flex-direction: column;
+  }
+
+  &--reverse {
+    .page-grid__main {
+      margin-right: 0;
+      margin-left: 30px;
+
+      @media #{$desktop} {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include font(36px, 500);
+    color: #484F63;
+    padding: 28px;
+    background-color: #fff;
+    @extend %shadowRounded;
+    margin-bottom: 24px;
+
+    @media #{$phone} {
+      font-size: 26px;
+      padding: 20px;
+      width: 100vw;
+      left: -15px;
+      position: relative;
+      border-radius: 0;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    max-width: 770px;
+    margin-right: 30px;
+
+    @media #{$desktop} {
+      max-width: 100%;
+      margin-right: 0;
+    }
+
+    .mob-section {
+      display: none;
+      margin-bottom: 25px;
+
+      @media #{$desktop} {
+        display: block;
+      }
+    }
+  }
+
+  &__side {
+    width: 100%;
+    max-width: 370px;
+
+    @media #{$desktop} {
+      display: none;
+    }
+
+    &.has-filter {
+      @extend %transition;
+
+      @media #{$desktop} {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        position: fixed;
+        height: 100%;
+        z-index: 24;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        overflow: auto;
+      }
+    }
+
+    &.show-filter {
+
+      @media #{$desktop} {
+        transform: translateX(0);
+      }
+    }
+  }
+}

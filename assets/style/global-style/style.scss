@@ -1,0 +1,45 @@
+// Import styles
+@import "normalize";
+@import "../coreui/scss/coreui";
+@import '../icons/coreui-icons';
+
+/* Import Simple Line Icons Set */
+$simple-line-font-path: '~simple-line-icons/fonts/';
+@import '~simple-line-icons/scss/simple-line-icons.scss';
+
+// ie fixes
+@import "ie-fix";
+
+/* Transitions effect */
+//bounce
+.bounce-enter-active {
+  animation: bounce-in .8s;
+}
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+@keyframes bounce-in {
+  0% { transform: scale(0) }
+  50% { transform: scale(1.2) }
+  100% { transform: scale(1) }
+}
+@keyframes bounce-out {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.2) }
+  100% { transform: scale(0) }
+}
+
+//animated
+.animated-enter-active {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-name: fadeIn;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

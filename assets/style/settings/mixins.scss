@@ -1,0 +1,92 @@
+@mixin font($fsz, $fw) {
+  font-size: $fsz;
+  font-weight: $fw;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin placeholder($font, $color, $anim: false) {
+  @if $anim {
+    &::-webkit-input-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transform: translateY(-2px);
+      transition: opacity 0.2s ease-out;
+    }
+    &::-moz-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transition: opacity 0.2s ease-out;
+    }
+    &:-moz-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transform: translateY(-2px);
+      transition: opacity 0.2s ease-out;
+    }
+    &:-ms-input-placeholder {
+      font: $font;
+      color: $color;
+      opacity: 1;
+      transform: translateY(-2px);
+      transition: opacity 0.2s ease-out;
+    }
+    &:focus::-webkit-input-placeholder {opacity: 0;}
+    &:focus::-moz-placeholder {opacity: 0;}
+    &:focus:-moz-placeholder {opacity: 0;}
+    &:focus:-ms-input-placeholder {opacity: 0;}
+  } @else {
+    &::-webkit-input-placeholder {
+      font: $font;
+      color: $color;
+    }
+    &::-moz-placeholder {
+      font: $font;
+      color: $color;
+    }
+    &:-moz-placeholder {
+      font: $font;
+      color: $color;
+    }
+    &:-ms-input-placeholder {
+      font: $font;
+      color: $color;
+    }
+  }
+}
+
+%transition {
+  transition: all .3s ease-in-out;
+}
+
+%gCenter {
+  display: flex;
+  justify-content: center;
+}
+
+%vCenter {
+  display: flex;
+  align-items: center;
+}
+
+%spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%shadowRounded {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .11);
+}

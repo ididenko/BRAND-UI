@@ -1,0 +1,356 @@
+$path-to-font: '~assets/fonts/icons';
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$path-to-font}/icomoon.eot?9wg238');
+  src:  url('#{$path-to-font}/icomoon.eot?9wg238#iefix') format('embedded-opentype'),
+  url('#{$path-to-font}/icomoon.woff2?9wg238') format('woff2'),
+  url('#{$path-to-font}/icomoon.ttf?9wg238') format('truetype'),
+  url('#{$path-to-font}/icomoon.woff?9wg238') format('woff'),
+  url('#{$path-to-font}/icomoon.svg?9wg238#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="font-icon"] {
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  color: #fff;
+}
+
+@mixin icon-styles {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == facebook {
+    $char: "\e900";
+  }
+
+  @if $filename == google {
+    $char: "\e901";
+  }
+
+  @if $filename == twitter {
+    $char: "\e902";
+  }
+
+  @if $filename == business {
+    $char: "\e903";
+  }
+
+  @if $filename == insights {
+    $char: "\e904";
+  }
+
+  @if $filename == man {
+    $char: "\e905";
+  }
+
+  @if $filename == partner {
+    $char: "\e906";
+  }
+
+  @if $filename == review {
+    $char: "\e907";
+  }
+
+  @if $filename == search {
+    $char: "\e908";
+  }
+
+  @if $filename == star-full {
+    $char: "\e909";
+  }
+
+  @if $filename == user {
+    $char: "\e90a";
+  }
+
+  @if $filename == warning {
+    $char: "\e90b";
+  }
+
+  @if $filename == arrow-down {
+    $char: "\e90c";
+  }
+
+  @if $filename == upload {
+    $char: "\e90d";
+  }
+
+  @if $filename == verified {
+    $char: "\e90e";
+  }
+
+  @if $filename == flag {
+    $char: "\e90f";
+  }
+
+  @if $filename == write {
+    $char: "\e910";
+  }
+
+  @if $filename == mail {
+    $char: "\e911";
+  }
+
+  @if $filename == reply {
+    $char: "\e912";
+  }
+
+  @if $filename == back {
+    $char: "\e913";
+  }
+
+  @if $filename == note {
+    $char: "\e914";
+  }
+
+  @if $filename == question {
+    $char: "\e915";
+  }
+
+  @if $filename == tick {
+    $char: "\e916";
+  }
+
+  @if $filename == camera {
+    $char: "\e917";
+  }
+
+  @if $filename == arrow-right {
+    $char: "\e918";
+  }
+
+  @if $filename == logout {
+    $char: "\e919";
+  }
+
+  @if $filename == alert {
+    $char: "\e91a";
+  }
+
+  @if $filename == close {
+    $char: "\e91b";
+  }
+
+  @if $filename == close-rounded {
+    $char: "\e91c";
+  }
+
+  @if $filename == file {
+    $char: "\e91d";
+  }
+
+  @if $filename == success {
+    $char: "\e91e";
+  }
+
+  @if $filename == trash {
+    $char: "\e91f";
+  }
+
+  @if $filename == filter {
+    $char: "\e920";
+  }
+
+  @if $filename == no-results {
+    $char: "\e921";
+  }
+
+  @if $filename == pag-left {
+    $char: "\e922";
+  }
+
+  @if $filename == pag-right {
+    $char: "\e923";
+  }
+
+  @if $filename == location {
+    $char: "\e924";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    }
+    @else {
+      @include icon-styles;
+    }
+
+    content: icon-char($filename);
+  }
+}
+
+.icon-facebook {
+  @include icon(facebook);
+}
+
+.icon-google {
+  @include icon(google);
+}
+
+.icon-twitter {
+  @include icon(twitter);
+}
+
+.icon-business {
+  @include icon(business);
+}
+
+.icon-insights {
+  @include icon(insights);
+}
+
+.icon-man {
+  @include icon(man);
+}
+
+.icon-partner {
+  @include icon(partner);
+}
+
+.icon-review {
+  @include icon(review);
+}
+
+.icon-search {
+  @include icon(search);
+}
+
+.icon-star-full {
+  @include icon(star-full);
+}
+
+.icon-user {
+  @include icon(user);
+}
+
+.icon-warning {
+  @include icon(warning);
+}
+
+.icon-arrow-down {
+  @include icon(arrow-down);
+}
+
+.icon-upload {
+  @include icon(upload);
+}
+
+.icon-verified {
+  @include icon(verified);
+}
+
+.icon-flag {
+  @include icon(flag);
+}
+
+.icon-write {
+  @include icon(write);
+}
+
+.icon-mail {
+  @include icon(mail);
+}
+
+.icon-reply {
+  @include icon(reply);
+}
+
+.icon-back {
+  @include icon(back);
+}
+
+.icon-note {
+  @include icon(note);
+}
+
+.icon-question {
+  @include icon(question);
+}
+
+.icon-tick {
+  @include icon(tick);
+}
+
+.icon-camera {
+  @include icon(camera);
+}
+
+.icon-arrow-right {
+  @include icon(arrow-right);
+}
+
+.icon-logout {
+  @include icon(logout);
+}
+
+.icon-alert {
+  @include icon(alert);
+}
+
+.icon-close {
+  @include icon(close);
+}
+
+.icon-close-rounded {
+  @include icon(close-rounded);
+}
+
+.icon-file {
+  @include icon(file);
+}
+
+.icon-success {
+  @include icon(success);
+}
+
+.icon-trash {
+  @include icon(trash);
+}
+
+.icon-filter {
+  @include icon(filter);
+}
+
+.icon-no-results {
+  @include icon(no-results);
+}
+
+.icon-pag-left {
+  @include icon(pag-left);
+}
+
+.icon-pag-right {
+  @include icon(pag-right);
+}
+
+.icon-location {
+  @include icon(location);
+}
